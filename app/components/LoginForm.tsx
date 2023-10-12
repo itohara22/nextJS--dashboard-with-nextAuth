@@ -24,7 +24,12 @@ export default function LoginForm() {
       <button
         className="bg-gray-200 p-2 rounded-lg text-sm hover:bg-blue-500 hover:text-white font-semibold transition-all"
         type="button"
-        onClick={() => signIn("google")}
+        onClick={() =>
+          signIn("google", {
+            callbackUrl:
+              "https://open-in-app-dashboard-itohara22.vercel.app/api/auth/callback/google"
+          })
+        }
       >
         SignIn with Google
       </button>
