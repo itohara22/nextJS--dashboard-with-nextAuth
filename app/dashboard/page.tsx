@@ -8,12 +8,6 @@ import TopCards from "@/app/components/TopCard";
 import DoughnutChart from "@/app/components/charts/DougnutChart";
 
 export default async function Dashboard() {
-  // const apiPrefix = process.env.NEXT_PUBLIC_API_PREFIX ?? "http://";
-  // const apiHost = process.env.NEXT_PUBLIC_VERCEL_URL ?? "localhost:3000";
-
-  // const productUrl = apiPrefix + apiHost + "/api/products";
-  // const userUrl = apiPrefix + apiHost + "/api/users";
-
   const res = await fetch(
     "https://open-in-app-dashboard.vercel.app/api/products",
     {
