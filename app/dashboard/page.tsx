@@ -7,14 +7,16 @@ import DoughnutChart from "@/app/components/charts/DougnutChart";
 
 export default async function Dashboard() {
   const res = await fetch(
-    process.env.PRODUCT_URL || "http://localhost:3000/api/products",
+    process.env.PRODUCT_URL ||
+      "https://open-in-app-dashboard.vercel.app/api/products",
     {
       cache: "no-store"
     }
   ).then((data) => data.json());
 
   const users = await fetch(
-    process.env.USER_URL || "http://localhost:3000/api/users",
+    process.env.USER_URL ||
+      "https://open-in-app-dashboard.vercel.app/api/users",
     {
       cache: "no-store"
     }
