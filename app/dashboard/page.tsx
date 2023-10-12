@@ -1,3 +1,5 @@
+"use client";
+
 import ActivityChart from "@/app/components/ActivityChart";
 import AddUser from "@/app/components/AddUser";
 import Header from "@/app/components/Header";
