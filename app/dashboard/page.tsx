@@ -6,19 +6,21 @@ import TopCards from "@/app/components/TopCard";
 import DoughnutChart from "@/app/components/charts/DougnutChart";
 
 export default async function Dashboard() {
-  const res = await fetch(
-    process.env.PRODUCT_URL || "https://localhost:3000/api/products",
-    {
-      cache: "no-store"
-    }
-  ).then((data) => data.json());
+  const apiPrefix = process.env.NEXT_PUBLIC_API_PREFIX ?? "http://";
+  const apiHost = process.env.NEXT_PUBLIC_VERCEL_URL ?? "localhost:3000";
 
-  const users = await fetch(
-    process.env.USER_URL || "https://localhost:3000/api/users",
-    {
-      cache: "no-store"
-    }
-  ).then((data) => data.json());
+  const productUrl = apiPrefix + apiHost + "/api/products";
+  const userUrl = apiPrefix + apiHost + "/api/users";
+
+  const res = await fetch(productUrl, {
+    cache: "no-store"
+  }).then((data) => {
+    return data.json();
+  });
+
+  const users = await fetch(userUrl, {
+    cache: "no-store"
+  }).then((data) => data.json());
 
   return (
     <div className="min-h-screen bg-[#F8FAFF]">
