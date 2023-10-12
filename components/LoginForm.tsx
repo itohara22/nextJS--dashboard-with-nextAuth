@@ -59,7 +59,7 @@ export default function LoginForm() {
         <button className="bg-blue-500 p-2 rounded-md text-white">Login</button>
       </div>
       <span className="text-center text-xs">
-        Don&apos;t have an account <a href="#">create an account</a>
+        Dont have an account <a href="#">create an account</a>
       </span>
     </form>
   );
