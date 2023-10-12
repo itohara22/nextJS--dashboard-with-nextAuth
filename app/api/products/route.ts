@@ -15,6 +15,6 @@ const products = [
   }
 ];
 
-export function GET() {
+export function GET(request: Request) {
   return NextResponse.json(products);
 }

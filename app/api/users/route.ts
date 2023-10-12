@@ -19,6 +19,6 @@ const users = [
   }
 ];
 
-export function GET() {
+export function GET(request: Request) {
   return NextResponse.json(users);
 }
