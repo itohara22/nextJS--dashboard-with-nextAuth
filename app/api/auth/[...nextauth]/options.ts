@@ -4,11 +4,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 export const options: NextAuthOptions = {
   pages: { signIn: "/" },
-  callbacks: {
-    async redirect() {
-      return "/dashboard";
-    }
-  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,

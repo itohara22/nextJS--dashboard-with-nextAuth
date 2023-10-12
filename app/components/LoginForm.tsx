@@ -1,9 +1,16 @@
 "use client";
 
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginForm() {
+  const { data: session, status } = useSession();
+
+  if (status === "authenticated") {
+    redirect("/dashboard");
+  }
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,12 +31,7 @@ export default function LoginForm() {
       <button
         className="bg-gray-200 p-2 rounded-lg text-sm hover:bg-blue-500 hover:text-white font-semibold transition-all"
         type="button"
-        onClick={() =>
-          signIn("google", {
-            callbackUrl:
-              "https://open-in-app-dashboard-itohara22.vercel.app/api/auth/callback/google"
-          })
-        }
+        onClick={() => signIn("google")}
       >
         SignIn with Google
       </button>
