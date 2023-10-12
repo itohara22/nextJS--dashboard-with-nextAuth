@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 import burger from "@/public/burger.svg";
-import dashboard from "../public/dashboard.svg";
-import schedule from "../public/schedule.svg";
-import settings from "../public/setting.svg";
-import transaction from "../public/transaction.svg";
-import user from "../public/user.svg";
+import dashboard from "@/public/dashboard.svg";
+import schedule from "@/public/schedule.svg";
+import settings from "@/public/setting.svg";
+import transaction from "@/public/transaction.svg";
+import user from "@/public/user.svg";
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
