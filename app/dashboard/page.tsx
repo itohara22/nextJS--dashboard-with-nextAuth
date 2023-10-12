@@ -14,15 +14,21 @@ export default async function Dashboard() {
   // const productUrl = apiPrefix + apiHost + "/api/products";
   // const userUrl = apiPrefix + apiHost + "/api/users";
 
-  // const res = await fetch(productUrl, {
-  //   cache: "no-store"
-  // }).then((data) => {
-  //   return data.json();
-  // });
+  const res = await fetch(
+    "https://open-in-app-dashboard.vercel.app/api/products",
+    {
+      cache: "no-store"
+    }
+  ).then((data) => {
+    return data.json();
+  });
 
-  // const users = await fetch(userUrl, {
-  //   cache: "no-store"
-  // }).then((data) => data.json());
+  const users = await fetch(
+    "https://open-in-app-dashboard.vercel.app/api/users",
+    {
+      cache: "no-store"
+    }
+  ).then((data) => data.json());
 
   return (
     <div className="min-h-screen bg-[#F8FAFF]">
@@ -30,11 +36,11 @@ export default async function Dashboard() {
       <div className="md:ml-[min(25vw,280px)]  h-full">
         <Header />
         <TopCards />
-        {/* <ActivityChart users={users} /> */}
+        <ActivityChart users={users} />
         <div className="mx-auto mt-4 mb-4 w-[90%] max-w-[1050px] grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
           <div className="bg-white p-2 rounded-lg drop-shadow-lg">
             <h2 className="text-lg font-semibold">Top Products</h2>
-            {/* <DoughnutChart res={res} /> */}
+            <DoughnutChart res={res} />
           </div>
           <AddUser />
         </div>
