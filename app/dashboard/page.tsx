@@ -1,9 +1,9 @@
-import ActivityChart from "@/components/ActivityChart";
-import AddUser from "@/components/AddUser";
-import Header from "@/components/Header";
-import Sidebar from "@/components/SideBar";
-import TopCards from "@/components/TopCard";
-import DoughnutChart from "@/components/charts/DougnutChart";
+import ActivityChart from "@/app/components/ActivityChart";
+import AddUser from "@/app/components/AddUser";
+import Header from "@/app/components/Header";
+import Sidebar from "@/app/components/SideBar";
+import TopCards from "@/app/components/TopCard";
+import DoughnutChart from "@/app/components/charts/DougnutChart";
 
 export default async function Dashboard() {
   const res = await fetch(
