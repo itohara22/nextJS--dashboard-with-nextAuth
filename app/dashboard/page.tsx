@@ -7,14 +7,14 @@ import DoughnutChart from "@/components/charts/DougnutChart";
 
 export default async function Dashboard() {
   const res = await fetch(
-    "https://open-in-app-dashboard-a8u3tpk5l-itohara22.vercel.app/api/products",
+    "https://www.open-in-app-dashboard-a8u3tpk5l-itohara22.vercel.app/api/products",
     {
       cache: "no-store"
     }
   ).then((data) => data.json());
 
   const users = await fetch(
-    "https://open-in-app-dashboard-a8u3tpk5l-itohara22.vercel.app/api/users",
+    "https://www.open-in-app-dashboard-a8u3tpk5l-itohara22.vercel.app/api/users",
     {
       cache: "no-store"
     }
